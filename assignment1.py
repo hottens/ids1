@@ -58,6 +58,9 @@ for title, values in data.items():
 	responseOMDB = urllib.urlopen(getOMDBURL(title,year))
 	resultOMDB = json.loads(responseOMDB.read())
 	values["OMDB"] = resultOMDB
+			
+	x+=1
+	if x==1000: break
 
 # Save extended dict
 with open('moviedata.txt', 'w') as file:
